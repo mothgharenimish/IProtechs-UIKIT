@@ -1,24 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OKl-rZ-gow">
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--MainVC-->
+        <scene sceneID="02X-xK-Edf">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="MainVC" id="OKl-rZ-gow" customClass="MainVC" customModule="IProtechs_UIKIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uv9-2T-YGb">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 176" translatesAutoresizingMaskIntoConstraints="NO" id="itQ-Wl-hns">
+                                <rect key="frame" x="66" y="234" width="270" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="9pP-2V-GcK"/>
+                                    <constraint firstAttribute="width" constant="270" id="llZ-eh-Rte"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Management System" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgJ-Yr-cbD">
+                                <rect key="frame" x="40" y="526" width="322" height="67"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With an extensive menu prepared by talented chefs, fresh quality food." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gc2-1D-THs">
+                                <rect key="frame" x="15" y="612" width="372" height="40.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JPO-qA-oyd">
+                                <rect key="frame" x="20" y="677.66666666666663" width="362" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXA-5E-LVc">
+                                        <rect key="frame" x="0.0" y="0.0" width="362" height="60"/>
+                                        <color key="backgroundColor" name="PinkColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="p0f-tQ-DkW"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign Up">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signupAction:" destination="OKl-rZ-gow" eventType="touchUpInside" id="G7l-T7-Wpv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9p9-vV-8UV">
+                                        <rect key="frame" x="0.0" y="70" width="362" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Already have an account">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                                            <color key="baseForegroundColor" systemColor="systemGray2Color"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="alreadyaccountAction:" destination="OKl-rZ-gow" eventType="touchUpInside" id="hVm-PQ-oeg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y9c-MO-57t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="y9c-MO-57t" firstAttribute="trailing" secondItem="JPO-qA-oyd" secondAttribute="trailing" constant="20" id="4na-ui-WPD"/>
+                            <constraint firstItem="itQ-Wl-hns" firstAttribute="centerX" secondItem="y9c-MO-57t" secondAttribute="centerX" id="IGc-nF-ouL"/>
+                            <constraint firstItem="gc2-1D-THs" firstAttribute="top" secondItem="BgJ-Yr-cbD" secondAttribute="bottom" constant="19" id="QZD-X6-JdV"/>
+                            <constraint firstItem="BgJ-Yr-cbD" firstAttribute="leading" secondItem="y9c-MO-57t" secondAttribute="leading" constant="40" id="UWJ-02-l0J"/>
+                            <constraint firstItem="gc2-1D-THs" firstAttribute="leading" secondItem="y9c-MO-57t" secondAttribute="leading" constant="15" id="Vsk-Um-zxh"/>
+                            <constraint firstItem="itQ-Wl-hns" firstAttribute="top" secondItem="y9c-MO-57t" secondAttribute="top" constant="110" id="h4L-lz-DZ7"/>
+                            <constraint firstItem="y9c-MO-57t" firstAttribute="trailing" secondItem="BgJ-Yr-cbD" secondAttribute="trailing" constant="40" id="nMj-yx-Iww"/>
+                            <constraint firstItem="JPO-qA-oyd" firstAttribute="leading" secondItem="y9c-MO-57t" secondAttribute="leading" constant="20" id="qQL-vk-CtD"/>
+                            <constraint firstItem="JPO-qA-oyd" firstAttribute="top" secondItem="gc2-1D-THs" secondAttribute="bottom" constant="25" id="ucg-Nq-wps"/>
+                            <constraint firstItem="y9c-MO-57t" firstAttribute="trailing" secondItem="gc2-1D-THs" secondAttribute="trailing" constant="15" id="urF-C1-EAr"/>
+                            <constraint firstItem="BgJ-Yr-cbD" firstAttribute="top" secondItem="itQ-Wl-hns" secondAttribute="bottom" constant="22" id="wP7-ld-rXV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="alreadyBtn" destination="9p9-vV-8UV" id="KSl-dG-dyn"/>
+                        <outlet property="signupBtn" destination="eXA-5E-LVc" id="i6Y-Fg-qUc"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jTw-vs-MYH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-221" y="7"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Group 176" width="309" height="316"/>
+        <namedColor name="PinkColor">
+            <color red="0.92549019607843142" green="0.27058823529411763" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
