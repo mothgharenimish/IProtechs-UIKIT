@@ -27,13 +27,15 @@ class MainVC: UIViewController {
     //MARK: -SignUP IBAction
     @IBAction func signupAction(_ sender: UIButton) {
         
-        
+        let loginViewController = self.storyboard!.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
+        self.navigationController!.pushViewController(loginViewController, animated: true)
     }
     
     
     //MARK: -Already Account IBAction 
     @IBAction func alreadyaccountAction(_ sender: UIButton) {
         
-        
+        let loginViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        self.navigationController!.pushViewController(loginViewController, animated: true)
     }
 }

@@ -8,22 +8,32 @@
 import UIKit
 
 class SignUpVC: UIViewController {
-
+    
+    //MARK: -IBOutlet
+    @IBOutlet weak var usernameView: UIView!
+    @IBOutlet weak var usernametxtField: UITextField!
+    @IBOutlet weak var passwordView: UIView!
+    @IBOutlet weak var passwordtxtField: UITextField!
+    @IBOutlet weak var confirmpasswordView: UIView!
+    @IBOutlet weak var confirmpasswordtxtField: UITextField!
+    @IBOutlet weak var signupBtn: UIButton!
+    
+    //MARK: -View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    
+    //MARK: -SignUp IbAction
+    @IBAction func signupAction(_ sender: UIButton) {
+        
+        
+        
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }
