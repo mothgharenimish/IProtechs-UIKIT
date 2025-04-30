@@ -8,22 +8,33 @@
 import UIKit
 
 class NewOrderVC: UIViewController {
-
+    
+    @IBOutlet weak var orderidView: UIView!
+    @IBOutlet weak var orderidtxtField: UITextField!
+    @IBOutlet weak var orderdateView: UIView!
+    @IBOutlet weak var orderdatetxtField: UITextField!
+    @IBOutlet weak var customernameView: UIView!
+    @IBOutlet weak var customernametxtField: UITextField!
+    @IBOutlet weak var customeraddressView: UIView!
+    @IBOutlet weak var customeraddresstxtField: UITextField!
+    @IBOutlet weak var customercontactView: UIView!
+    @IBOutlet weak var customertxtField: UITextField!
+    @IBOutlet weak var ordertotalView: UIView!
+    @IBOutlet weak var ordertotaltxtField: UITextField!
+    @IBOutlet weak var saveBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    
+    @IBAction func saveAction(_ sender: UIButton) {
+        
+        
     }
-    */
-
+    
+   
 }

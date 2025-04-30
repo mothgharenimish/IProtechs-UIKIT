@@ -1107,11 +1107,12 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
+                                                    <action selector="saveAction:" destination="g1B-hO-QEv" eventType="touchUpInside" id="TP3-jl-hOW"/>
                                                     <action selector="signupAction:" destination="EBI-zs-FXH" eventType="touchUpInside" id="I9g-s3-Ji1"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="sXm-tD-JPK" firstAttribute="leading" secondItem="WMu-f6-H7V" secondAttribute="leading" constant="15" id="1uE-gF-vjO"/>
                                             <constraint firstItem="K7t-8R-iii" firstAttribute="leading" secondItem="WMu-f6-H7V" secondAttribute="leading" constant="15" id="F3H-ae-CJs"/>
@@ -1196,6 +1197,21 @@
                             <constraint firstItem="H4a-PV-gic" firstAttribute="trailing" secondItem="c6w-kd-Mrk" secondAttribute="trailing" id="ZyV-eh-VYa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="customeraddressView" destination="0Pn-Lw-i2Z" id="den-oW-jmF"/>
+                        <outlet property="customeraddresstxtField" destination="5Yx-aR-GR8" id="q1V-Hu-Ii1"/>
+                        <outlet property="customercontactView" destination="K7t-8R-iii" id="SLy-BU-HbP"/>
+                        <outlet property="customernameView" destination="6a4-CO-2Y3" id="09S-p7-z6y"/>
+                        <outlet property="customernametxtField" destination="EkP-VE-3Rj" id="0is-4g-Ihe"/>
+                        <outlet property="customertxtField" destination="hKB-UG-diP" id="K9q-Th-Rgp"/>
+                        <outlet property="orderdateView" destination="8Ku-bi-uVE" id="UWj-Yg-kl8"/>
+                        <outlet property="orderdatetxtField" destination="6kd-TH-eFE" id="abm-aM-dTO"/>
+                        <outlet property="orderidView" destination="sXm-tD-JPK" id="WWg-ke-tqU"/>
+                        <outlet property="orderidtxtField" destination="VAa-Ht-AY3" id="661-wJ-KDr"/>
+                        <outlet property="ordertotalView" destination="6xx-VJ-kI9" id="qnv-u1-dN7"/>
+                        <outlet property="ordertotaltxtField" destination="tXV-fh-g5i" id="T65-PO-tmN"/>
+                        <outlet property="saveBtn" destination="Fad-uX-KBb" id="z7h-jv-Xzr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R2W-OW-CdO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
