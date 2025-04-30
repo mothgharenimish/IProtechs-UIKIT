@@ -13,6 +13,10 @@ class OrderVC: UIViewController {
     @IBOutlet weak var neworderBtn: UIButton!
     @IBOutlet weak var ordertblView: UITableView!
     
+    
+    //Order Array
+    let orders : [OrderData] = []
+    
     //MARK: -View Life Cycle 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +36,7 @@ extension OrderVC : UITableViewDelegate {
 //MARK: -UITableViewDataSource
 extension OrderVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return orders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
