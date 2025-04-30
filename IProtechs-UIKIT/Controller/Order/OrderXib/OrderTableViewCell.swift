@@ -8,7 +8,22 @@
 import UIKit
 
 class OrderTableViewCell: UITableViewCell {
-
+    
+    //MARK: -IBOutlet 
+    @IBOutlet weak var customerImg: UIImageView!
+    @IBOutlet weak var customernameLbl: UILabel!
+    @IBOutlet weak var orderdateLbl: UILabel!
+    @IBOutlet weak var orderidLbl: UILabel!
+    @IBOutlet weak var contactnoLbl: UILabel!
+    @IBOutlet weak var addressLbl: UILabel!
+    @IBOutlet weak var ordertotalLBl: UILabel!
+    @IBOutlet weak var idView: UIView!
+    @IBOutlet weak var orderView: UIView!
+    @IBOutlet weak var editView: UIView!
+    @IBOutlet weak var deleteView: UIView!
+    @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var deleteBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
