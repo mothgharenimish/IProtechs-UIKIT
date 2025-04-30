@@ -24,19 +24,36 @@ class OrderVC: UIViewController, OrderDelegate {
         self.ordertblView.delegate = self
         self.ordertblView.dataSource = self
         
-        self.ordertblView.reloadData()
-        
+        fetchOrders()
+
+
         
         ordertblView.register(UINib(nibName: "OrderTableViewCell", bundle: nil), forCellReuseIdentifier: "OrderTableViewCell")
+        
+        
+        fetchOrders()
+
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchOrders()
+    }
+
+    
+    
+    
+    func fetchOrders() {
+           orders = OrderCoreDataManager.shared.fetchOrders()
+           self.ordertblView.reloadData()
+       }
     
     
     func didAddOrder(_ order: OrderData) {
         
-        orders.append(order)
-        
-        self.ordertblView.reloadData()
-        
+//        OrderCoreDataManager.shared.addOrder(order: order)
+        fetchOrders()
+
     }
     
     //MARK: -NewOrder IBAction 
@@ -50,14 +67,22 @@ class OrderVC: UIViewController, OrderDelegate {
     
     @objc func deletedtapped(sender : UIButton) {
         
-         
+        let order = orders[sender.tag]
+        print("The sender tag we have to print \(sender.tag)")
+        print("Print the delete Index \(order)")
+        OrderCoreDataManager.shared.deleteOrder(orderID: order.orderid)
+        fetchOrders()
       
     }
     
     @objc func edittapped(sender : UIButton) {
         
-         
-      
+        let order = orders[sender.tag]
+        let newOrderVC = self.storyboard!.instantiateViewController(withIdentifier: "NewOrderVC") as! NewOrderVC
+        newOrderVC.delegate = self
+        newOrderVC.isEditMode = true
+        newOrderVC.orderToEdit = order
+        self.navigationController!.pushViewController(newOrderVC, animated: true)
     }
     
     

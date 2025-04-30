@@ -34,6 +34,10 @@ class NewOrderVC: UIViewController {
     
     
     var datePicker: UIDatePicker?
+    
+    
+        var isEditMode = false
+        var orderToEdit: OrderData?
 
 
     //MARK: -View Life Cycle
@@ -79,6 +83,22 @@ class NewOrderVC: UIViewController {
                // Set the input view of the orderdatetxtField to the date picker
                orderdatetxtField.inputView = datePicker
                orderdatetxtField.inputAccessoryView = toolBar
+        
+        
+        
+                if isEditMode, let order = orderToEdit {
+                    orderidtxtField.text = order.orderid
+                    orderdatetxtField.text = order.orderduedate
+                    customernametxtField.text = order.customername
+                    customeraddresstxtField.text = order.customeraddress
+                    customernumbertxtField.text = order.customercontactno
+                    ordertotaltxtField.text = order.totalordervalue
+                    
+                    orderidtxtField.isEnabled = false
+                    title = "Edit Order"
+                } else {
+                    title = "New Order"
+                }
       
     }
     
@@ -110,32 +130,26 @@ class NewOrderVC: UIViewController {
     @IBAction func saveAction(_ sender: UIButton) {
         
         if let orderID = orderidtxtField.text, !orderID.isEmpty,
-           let orderdate = orderdatetxtField.text, !orderdate.isEmpty,
-           let customername = customernametxtField.text, !customername.isEmpty,
-           let customeraddress = customeraddresstxtField.text, !customeraddress.isEmpty,
-           let customernumber = customernumbertxtField.text, !customername.isEmpty,
-           let ordertotalvalue = ordertotaltxtField.text, !ordertotalvalue.isEmpty {
-            
-            
-            let newOrder = OrderData(orderid: orderID, orderduedate: orderdate, customername: customername, customeraddress: customeraddress, customercontactno: customernumber, totalordervalue: ordertotalvalue)
-            
-            delegate?.didAddOrder(newOrder)
-            
-            if let viewControllers = self.navigationController?.viewControllers {
-                   for vc in viewControllers {
-                       if vc is OrderVC {
-                           self.navigationController?.popToViewController(vc, animated: true)
-                           break
-                       }
+               let orderdate = orderdatetxtField.text, !orderdate.isEmpty,
+               let customername = customernametxtField.text, !customername.isEmpty,
+               let customeraddress = customeraddresstxtField.text, !customeraddress.isEmpty,
+               let customernumber = customernumbertxtField.text, !customername.isEmpty,
+               let ordertotalvalue = ordertotaltxtField.text, !ordertotalvalue.isEmpty {
+                
+                let newOrder = OrderData(orderid: orderID, orderduedate: orderdate, customername: customername, customeraddress: customeraddress, customercontactno: customernumber, totalordervalue: ordertotalvalue)
+                
+            if isEditMode {
+                       OrderCoreDataManager.shared.updateOrder(order: newOrder)
+                   } else {
+                       OrderCoreDataManager.shared.addOrder(order: newOrder)
                    }
-               }
-        }
-        
-        
-        else {
-            
-            shownaviagtionAlert(title: "New Order", message: "Please fill all the required filled")
-        }
+                   
+                   delegate?.didAddOrder(newOrder)
+                // Go back
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                shownaviagtionAlert(title: "New Order", message: "Please fill all the required fields")
+            }
 
     }
     
