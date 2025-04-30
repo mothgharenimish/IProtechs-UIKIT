@@ -8,22 +8,42 @@
 import UIKit
 
 class OrderVC: UIViewController {
-
+    
+    //MARK: -IBOutlet
+    @IBOutlet weak var neworderBtn: UIButton!
+    @IBOutlet weak var ordertblView: UITableView!
+    
+    //MARK: -View Life Cycle 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.ordertblView.delegate = self
+        self.ordertblView.dataSource = self
+        
+    }
+}
+
+
+extension OrderVC : UITableViewDelegate {
+    
+    
+}
+
+extension OrderVC : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
-    */
-
+    
+    
+    
 }
+
+
+
+
+
+

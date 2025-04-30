@@ -33,7 +33,7 @@
 		2F2A29212DC0BCD5007FE1A4 /* Exceptions for "IProtechs-UIKIT" folder in "IProtechs-UIKIT" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = 2F2A28F82DC0BCD3007FE1A4 /* IProtechs-UIKIT */;
 		};
