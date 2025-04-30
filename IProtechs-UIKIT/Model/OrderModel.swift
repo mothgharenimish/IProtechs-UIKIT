@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+
+struct OrderData {
+    
+    let orderid : String
+    let orderduedate : String
+    let customername : String
+    let customeraddress : String
+    let customercontactno : String
+    let totalordervalue : String
+}
+
+
