@@ -48,7 +48,12 @@ class LoginVC: UIViewController {
                // Call CoreDataManager to fetch user by username and password
                if let user = coreDataManager.fetchUserByUsernameAndPassword(username: username, password: password) {
                    // If user is found, login successful
-                   showAlert(message: "Login successful!")
+//                   showAlert(message: "Login successful!")
+                   shownaviagtionAlert(title: "Login", message: "Login Successfull", completion: {
+                       
+                       let loginViewController = self.storyboard!.instantiateViewController(withIdentifier: "OrderVC") as! OrderVC
+                       self.navigationController!.pushViewController(loginViewController, animated: true)
+                   })
                    print("User logged in: \(user.username ?? "")")
                } else {
                    // If no user is found, login failed

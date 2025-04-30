@@ -865,6 +865,9 @@
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <color key="baseForegroundColor" name="PinkColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="neworderAction:" destination="eVn-oE-hZS" eventType="touchUpInside" id="fz2-uA-HHt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

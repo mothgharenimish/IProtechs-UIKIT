@@ -25,6 +25,16 @@ class OrderVC: UIViewController {
         self.ordertblView.dataSource = self
         
     }
+    
+    //MARK: -NewOrder IBAction 
+    @IBAction func neworderAction(_ sender: UIButton) {
+        
+        let neworderViewController = self.storyboard!.instantiateViewController(withIdentifier: "NewOrderVC") as! NewOrderVC
+        self.navigationController!.pushViewController(neworderViewController, animated: true)
+    }
+    
+    
+    
 }
 
 //MARK: -UITableViewDelegate
