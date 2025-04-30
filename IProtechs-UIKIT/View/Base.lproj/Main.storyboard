@@ -888,7 +888,7 @@
                                     <constraint firstAttribute="width" constant="25" id="LvJ-wE-l3l"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zij-E2-nUN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zij-E2-nUN">
                                 <rect key="frame" x="0.0" y="162" width="393" height="622"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -973,12 +973,24 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xet-2A-O5p">
+                                                        <rect key="frame" x="0.0" y="0.0" width="363" height="55"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="datepickerOpen:" destination="g1B-hO-QEv" eventType="touchUpInside" id="nm9-t8-fj3"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Xet-2A-O5p" secondAttribute="bottom" id="1YP-t5-R9C"/>
                                                     <constraint firstItem="ME9-cg-b5s" firstAttribute="leading" secondItem="8Ku-bi-uVE" secondAttribute="leading" constant="5" id="83H-B1-66U"/>
+                                                    <constraint firstItem="Xet-2A-O5p" firstAttribute="top" secondItem="8Ku-bi-uVE" secondAttribute="top" id="BPK-EH-VAo"/>
                                                     <constraint firstItem="6kd-TH-eFE" firstAttribute="leading" secondItem="ME9-cg-b5s" secondAttribute="trailing" constant="5" id="NP5-hj-gMq"/>
                                                     <constraint firstAttribute="height" constant="55" id="XCu-tX-EKY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Xet-2A-O5p" secondAttribute="trailing" id="cqR-Ou-BoY"/>
+                                                    <constraint firstItem="Xet-2A-O5p" firstAttribute="leading" secondItem="8Ku-bi-uVE" secondAttribute="leading" id="dMS-dJ-ELO"/>
                                                     <constraint firstItem="ME9-cg-b5s" firstAttribute="centerY" secondItem="8Ku-bi-uVE" secondAttribute="centerY" id="fGy-Dc-0J4"/>
                                                     <constraint firstItem="6kd-TH-eFE" firstAttribute="centerY" secondItem="ME9-cg-b5s" secondAttribute="centerY" id="jzi-2C-uWF"/>
                                                     <constraint firstItem="6kd-TH-eFE" firstAttribute="top" secondItem="8Ku-bi-uVE" secondAttribute="top" id="o0v-Rf-cWm"/>
@@ -1206,7 +1218,7 @@
                         <outlet property="customercontactView" destination="K7t-8R-iii" id="SLy-BU-HbP"/>
                         <outlet property="customernameView" destination="6a4-CO-2Y3" id="09S-p7-z6y"/>
                         <outlet property="customernametxtField" destination="EkP-VE-3Rj" id="0is-4g-Ihe"/>
-                        <outlet property="customertxtField" destination="hKB-UG-diP" id="K9q-Th-Rgp"/>
+                        <outlet property="customernumbertxtField" destination="hKB-UG-diP" id="K9q-Th-Rgp"/>
                         <outlet property="orderdateView" destination="8Ku-bi-uVE" id="UWj-Yg-kl8"/>
                         <outlet property="orderdatetxtField" destination="6kd-TH-eFE" id="abm-aM-dTO"/>
                         <outlet property="orderidView" destination="sXm-tD-JPK" id="WWg-ke-tqU"/>
@@ -1260,10 +1272,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -5,4 +5,12 @@
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="CustomerOrderData" representedClassName="CustomerOrderData" syncable="YES" codeGenerationType="class">
+        <attribute name="customeraddress" optional="YES" attributeType="String"/>
+        <attribute name="customercontactno" optional="YES" attributeType="String"/>
+        <attribute name="customername" optional="YES" attributeType="String"/>
+        <attribute name="orderduedate" optional="YES" attributeType="String"/>
+        <attribute name="orderid" optional="YES" attributeType="String"/>
+        <attribute name="totalordervalue" optional="YES" attributeType="String"/>
+    </entity>
 </model>

@@ -26,7 +26,13 @@ class OrderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
+        self.customerImg.setCornerRadiusImage(10.0)
+        self.orderView.setCornerRadiusView(10.0)
+        self.deleteView.setCornerRadiusView(10.0)
+        self.editView.setCornerRadiusView(10.0)
+        self.idView.setCornerRadiusView(10.0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

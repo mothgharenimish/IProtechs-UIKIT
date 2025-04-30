@@ -7,6 +7,11 @@
 
 import UIKit
 
+
+protocol OrderDelegate: AnyObject {
+    func didAddOrder(_ order: OrderData)
+}
+
 class NewOrderVC: UIViewController {
     
     //MARK: -IBAction
@@ -19,11 +24,18 @@ class NewOrderVC: UIViewController {
     @IBOutlet weak var customeraddressView: UIView!
     @IBOutlet weak var customeraddresstxtField: UITextField!
     @IBOutlet weak var customercontactView: UIView!
-    @IBOutlet weak var customertxtField: UITextField!
+    @IBOutlet weak var customernumbertxtField: UITextField!
     @IBOutlet weak var ordertotalView: UIView!
     @IBOutlet weak var ordertotaltxtField: UITextField!
     @IBOutlet weak var saveBtn: UIButton!
     
+    
+    weak var delegate: OrderDelegate?
+    
+    
+    var datePicker: UIDatePicker?
+
+
     //MARK: -View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,13 +65,78 @@ class NewOrderVC: UIViewController {
         ordertotalView.layer.borderColor = UIColor.lightGray.cgColor
 
 
+        // Initialize the date picker
+               datePicker = UIDatePicker()
+               datePicker?.datePickerMode = .date
+               datePicker?.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+
+               // Add a toolbar with "Done" button for the date picker
+               let toolBar = UIToolbar()
+               toolBar.sizeToFit()
+               let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
+               toolBar.setItems([doneButton], animated: true)
+
+               // Set the input view of the orderdatetxtField to the date picker
+               orderdatetxtField.inputView = datePicker
+               orderdatetxtField.inputAccessoryView = toolBar
       
     }
+    
+    
+    // MARK: - Date Picker Methods
+        @objc func dateChanged() {
+            // Format and display the selected date
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            orderdatetxtField.text = dateFormatter.string(from: datePicker!.date)
+        }
+
+        // MARK: - Done Button Action
+        @objc func doneButtonTapped() {
+            // Close the date picker when "Done" is tapped
+            self.view.endEditing(true)
+        }
+    
+    //MARK: -Date Picker IBAction 
+    @IBAction func datepickerOpen(_ sender: UIButton) {
+        
+        orderdatetxtField.becomeFirstResponder()
+
+    }
+    
     
     //MARK: -Save IBAction
     @IBAction func saveAction(_ sender: UIButton) {
         
+        if let orderID = orderidtxtField.text, !orderID.isEmpty,
+           let orderdate = orderdatetxtField.text, !orderdate.isEmpty,
+           let customername = customernametxtField.text, !customername.isEmpty,
+           let customeraddress = customeraddresstxtField.text, !customeraddress.isEmpty,
+           let customernumber = customernumbertxtField.text, !customername.isEmpty,
+           let ordertotalvalue = ordertotaltxtField.text, !ordertotalvalue.isEmpty {
+            
+            
+            let newOrder = OrderData(orderid: orderID, orderduedate: orderdate, customername: customername, customeraddress: customeraddress, customercontactno: customernumber, totalordervalue: ordertotalvalue)
+            
+            delegate?.didAddOrder(newOrder)
+            
+            if let viewControllers = self.navigationController?.viewControllers {
+                   for vc in viewControllers {
+                       if vc is OrderVC {
+                           self.navigationController?.popToViewController(vc, animated: true)
+                           break
+                       }
+                   }
+               }
+        }
         
+        
+        else {
+            
+            shownaviagtionAlert(title: "New Order", message: "Please fill all the required filled")
+        }
+
     }
     
    
