@@ -48,6 +48,18 @@ class OrderVC: UIViewController, OrderDelegate {
     }
     
     
+    @objc func deletedtapped(sender : UIButton) {
+        
+         
+      
+    }
+    
+    @objc func edittapped(sender : UIButton) {
+        
+         
+      
+    }
+    
     
 }
 
@@ -73,6 +85,12 @@ extension OrderVC : UITableViewDataSource {
         cell.addressLbl.text = orders[indexPath.row].customeraddress
         cell.contactnoLbl.text = orders[indexPath.row].customercontactno
         cell.ordertotalLBl.text = orders[indexPath.row].totalordervalue
+        
+        cell.deleteBtn.tag = indexPath.row
+        cell.deleteBtn.addTarget(self, action: #selector(deletedtapped), for: .touchUpInside)
+        
+        cell.editBtn.tag = indexPath.row
+        cell.editBtn.addTarget(self, action: #selector(edittapped), for: .touchUpInside)
         return cell
     }
     
