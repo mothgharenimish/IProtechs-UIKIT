@@ -21,22 +21,18 @@ class CoreDataManager {
     
     // MARK: - Save User Data
     func saveUserData(username: String, password: String, confirmPassword: String, completion: @escaping (Bool, String) -> Void) {
-        // Ensure password and confirm password match
         if password != confirmPassword {
             completion(false, "Passwords do not match.")
             return
         }
         
-        // Create a new instance of Authentication entity
         let newUser = Authentication(context: context)
         print("print the new user \(newUser)")
         
-        // Set values for attributes
         newUser.username = username
         newUser.password = password
         newUser.confirmpassword = confirmPassword
         
-        // Save context
         do {
             try context.save()
             fetchAndPrintUsers()
