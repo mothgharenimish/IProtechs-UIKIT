@@ -67,22 +67,41 @@ class OrderVC: UIViewController, OrderDelegate {
     
     @objc func deletedtapped(sender : UIButton) {
         
-        let order = orders[sender.tag]
-        print("The sender tag we have to print \(sender.tag)")
-        print("Print the delete Index \(order)")
-        OrderCoreDataManager.shared.deleteOrder(orderID: order.orderid)
-        fetchOrders()
+        shownaviagtionAlert(title: "Order", message: "Are you sure you want delete the order", completion: {
+            
+            let order = self.orders[sender.tag]
+            print("The sender tag we have to print \(sender.tag)")
+            print("Print the delete Index \(order)")
+            OrderCoreDataManager.shared.deleteOrder(orderID: order.orderid)
+            self.fetchOrders()
+        })
+        
+//        let order = orders[sender.tag]
+//        print("The sender tag we have to print \(sender.tag)")
+//        print("Print the delete Index \(order)")
+//        OrderCoreDataManager.shared.deleteOrder(orderID: order.orderid)
+//        fetchOrders()
       
     }
     
     @objc func edittapped(sender : UIButton) {
         
-        let order = orders[sender.tag]
-        let newOrderVC = self.storyboard!.instantiateViewController(withIdentifier: "NewOrderVC") as! NewOrderVC
-        newOrderVC.delegate = self
-        newOrderVC.isEditMode = true
-        newOrderVC.orderToEdit = order
-        self.navigationController!.pushViewController(newOrderVC, animated: true)
+        
+        shownaviagtionAlert(title: "Order", message: "Are you sure you want to edit the Order ", completion: {
+            let order = self.orders[sender.tag]
+            let newOrderVC = self.storyboard!.instantiateViewController(withIdentifier: "NewOrderVC") as! NewOrderVC
+            newOrderVC.delegate = self
+            newOrderVC.isEditMode = true
+            newOrderVC.orderToEdit = order
+            self.navigationController!.pushViewController(newOrderVC, animated: true)
+        })
+        
+//        let order = orders[sender.tag]
+//        let newOrderVC = self.storyboard!.instantiateViewController(withIdentifier: "NewOrderVC") as! NewOrderVC
+//        newOrderVC.delegate = self
+//        newOrderVC.isEditMode = true
+//        newOrderVC.orderToEdit = order
+//        self.navigationController!.pushViewController(newOrderVC, animated: true)
     }
     
     

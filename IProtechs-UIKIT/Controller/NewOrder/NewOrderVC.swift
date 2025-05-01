@@ -30,6 +30,7 @@ class NewOrderVC: UIViewController {
     @IBOutlet weak var ordertotaltxtField: UITextField!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var orderLbl: UILabel!
     
     
     weak var delegate: OrderDelegate?
@@ -95,8 +96,11 @@ class NewOrderVC: UIViewController {
                     
                     orderidtxtField.isEnabled = false
                     title = "Edit Order"
+                    self.orderLbl.text = "Edit Order"
                 } else {
                     title = "New Order"
+                    self.orderLbl.text = "New Order"
+
                 }
       
     }

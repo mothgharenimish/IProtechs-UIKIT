@@ -160,7 +160,7 @@
                                                             <constraint firstAttribute="width" constant="20" id="tT4-iZ-iOt"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b7t-NI-HI9">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b7t-NI-HI9">
                                                         <rect key="frame" x="30" y="0.0" width="333" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1092,7 +1092,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Customer Contact No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKB-UG-diP">
                                                         <rect key="frame" x="30" y="0.0" width="333" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1120,7 +1120,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Order Total Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tXV-fh-g5i">
                                                         <rect key="frame" x="30" y="0.0" width="333" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1248,6 +1248,7 @@
                         <outlet property="customernameView" destination="6a4-CO-2Y3" id="09S-p7-z6y"/>
                         <outlet property="customernametxtField" destination="EkP-VE-3Rj" id="0is-4g-Ihe"/>
                         <outlet property="customernumbertxtField" destination="hKB-UG-diP" id="K9q-Th-Rgp"/>
+                        <outlet property="orderLbl" destination="TWI-sI-ghR" id="xZi-nt-7xN"/>
                         <outlet property="orderdateView" destination="8Ku-bi-uVE" id="UWj-Yg-kl8"/>
                         <outlet property="orderdatetxtField" destination="6kd-TH-eFE" id="abm-aM-dTO"/>
                         <outlet property="orderidView" destination="sXm-tD-JPK" id="WWg-ke-tqU"/>
