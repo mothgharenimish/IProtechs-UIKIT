@@ -15,6 +15,10 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var passwordtxtField: UITextField!
     @IBOutlet weak var signinBtn: UIButton!
+    @IBOutlet weak var googleView: UIView!
+    @IBOutlet weak var fbView: UIView!
+    @IBOutlet weak var signUpBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     
     
     let coreDataManager = CoreDataManager()
@@ -31,24 +35,46 @@ class LoginVC: UIViewController {
         passwordView.setCornerRadiusView(9.0)
         passwordView.layer.borderWidth = 1.0
         passwordView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        googleView.setCornerRadiusView(9.0)
+        googleView.layer.borderWidth = 1.0
+        googleView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        fbView.setCornerRadiusView(9.0)
+        fbView.layer.borderWidth = 1.0
+        fbView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        
+    }
+    
+    
+    //MARK: -Sign Up IBAction
+    @IBAction func signupAction(_ sender: UIButton) {
+        
+        let signupViewController = self.storyboard!.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
+        self.navigationController!.pushViewController(signupViewController, animated: true)
+    }
+    
+    
+    //MARK: -Back IBAction
+    @IBAction func backAction(_ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
+
     }
     
     
     //MARK: -SignIn IbAction
     @IBAction func signinAction(_ sender: UIButton) {
         
-        // Ensure the fields are not empty
                guard let username = usernametxtField.text, !username.isEmpty,
                      let password = passwordtxtField.text, !password.isEmpty else {
-                   // Show an alert if any field is empty
                    showAlert(message: "Both fields are required.")
                    return
                }
                
-               // Call CoreDataManager to fetch user by username and password
                if let user = coreDataManager.fetchUserByUsernameAndPassword(username: username, password: password) {
-                   // If user is found, login successful
-//                   showAlert(message: "Login successful!")
+                 
                    shownaviagtionAlert(title: "Login", message: "Login Successfull", completion: {
                        
                        let loginViewController = self.storyboard!.instantiateViewController(withIdentifier: "OrderVC") as! OrderVC
@@ -56,21 +82,9 @@ class LoginVC: UIViewController {
                    })
                    print("User logged in: \(user.username ?? "")")
                } else {
-                   // If no user is found, login failed
-                   showAlert(message: "Invalid username or password.")
+                   shownaviagtionAlert(title: "Login", message: "Invalid username or password.")
                }
         
     }
     
-    
-    //MARK: -Show Alert
-        func showLoginAlert(message: String) {
-            let alertController = UIAlertController(title: "Login", message: message, preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertController.addAction(action)
-            self.present(alertController, animated: true, completion: nil)
-        }
-    
-    
-
 }

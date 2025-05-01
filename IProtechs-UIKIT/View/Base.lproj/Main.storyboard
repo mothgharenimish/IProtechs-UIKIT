@@ -122,6 +122,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="backAction:" destination="0TR-ni-Suz" eventType="touchUpInside" id="NRL-MY-lIb"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -295,6 +298,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="310" height="22"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="signupAction:" destination="0TR-ni-Suz" eventType="touchUpInside" id="w8l-rD-HoN"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -449,8 +455,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="qjS-8g-3Ih" id="ei1-Tl-weg"/>
+                        <outlet property="fbView" destination="4vO-s8-gRb" id="Pjp-OL-Rfb"/>
+                        <outlet property="googleView" destination="0SQ-3j-Shc" id="MF4-mb-hi1"/>
                         <outlet property="passwordView" destination="NJm-Jr-WpU" id="Td5-Go-SeT"/>
                         <outlet property="passwordtxtField" destination="QNX-Zi-XNI" id="myW-ls-xC4"/>
+                        <outlet property="signUpBtn" destination="bLE-nn-G4J" id="TK5-fv-wgW"/>
                         <outlet property="signinBtn" destination="9BD-fr-xnJ" id="QTE-0V-0pL"/>
                         <outlet property="usernameView" destination="faq-S7-Gge" id="JB3-ju-HjK"/>
                         <outlet property="usernametxtField" destination="b7t-NI-HI9" id="Kf1-Dd-7Rj"/>
@@ -488,6 +498,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="backAction:" destination="EBI-zs-FXH" eventType="touchUpInside" id="ob7-Bo-vtE"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -640,6 +653,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="310" height="22"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="signinAction:" destination="EBI-zs-FXH" eventType="touchUpInside" id="Qfl-Kb-0oR"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -828,10 +844,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="yqq-MJ-uAa" id="mKv-AQ-Ztk"/>
                         <outlet property="confirmpasswordView" destination="ZRJ-Uo-5If" id="sER-ab-VGd"/>
                         <outlet property="confirmpasswordtxtField" destination="Fxp-h0-duJ" id="dpY-on-ixm"/>
+                        <outlet property="fbView" destination="5ma-L3-Hof" id="fsU-Ox-TO1"/>
+                        <outlet property="googleView" destination="j3B-gW-ISl" id="D77-Tf-c35"/>
                         <outlet property="passwordView" destination="eiw-TI-PGe" id="ZnW-eU-mwc"/>
                         <outlet property="passwordtxtField" destination="HRb-jl-m4A" id="h3X-Sc-fKD"/>
+                        <outlet property="signinBtn" destination="v29-RN-AmX" id="WIU-Gk-Zws"/>
                         <outlet property="signupBtn" destination="4BH-U3-kfL" id="K5l-de-BxP"/>
                         <outlet property="usernameView" destination="GzR-nI-YVh" id="iwD-re-nZD"/>
                         <outlet property="usernametxtField" destination="RyI-wm-5Ke" id="TMi-h5-XOH"/>
@@ -1272,10 +1292,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

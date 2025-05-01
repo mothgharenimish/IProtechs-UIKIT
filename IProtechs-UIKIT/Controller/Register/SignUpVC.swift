@@ -17,7 +17,10 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var confirmpasswordView: UIView!
     @IBOutlet weak var confirmpasswordtxtField: UITextField!
     @IBOutlet weak var signupBtn: UIButton!
-    
+    @IBOutlet weak var googleView: UIView!
+    @IBOutlet weak var fbView: UIView!
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var signinBtn: UIButton!
     
     let coreDataManager = CoreDataManager()
     
@@ -42,41 +45,59 @@ class SignUpVC: UIViewController {
         
     }
     
+    //MARK: -Back IBAction
+    @IBAction func backAction(_ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
+
+    }
+    
+    
+    //MARK: -Sign In IBAction 
+    @IBAction func signinAction(_ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
+
+    }
+    
+    
+    
     
     //MARK: -SignUp IbAction
     @IBAction func signupAction(_ sender: UIButton) {
         
-        // Ensure the fields are not empty
                guard let username = usernametxtField.text, !username.isEmpty,
                      let password = passwordtxtField.text, !password.isEmpty,
                      let confirmPassword = confirmpasswordtxtField.text, !confirmPassword.isEmpty else {
-                   // Show an alert if any field is empty
                    showAlert(message: "All fields are required.")
                    return
                }
                
-               // Validate username using regex (no numbers)
                if !isValidUsername(username) {
                    showAlert(message: "Username should not contain any numbers.")
                    return
                }
                
-               // Validate password strength using regex (10 characters, numerical or alphabetic or mixed)
+              
                if !isValidPassword(password) {
                    showAlert(message: "Password must be 10 characters, and can be numeric, alphabetic, or a mix of both.")
                    return
                }
                
-               // Ensure password and confirm password match
                if password != confirmPassword {
                    showAlert(message: "Passwords do not match.")
                    return
                }
                
-               // Call CoreDataManager to save data
                coreDataManager.saveUserData(username: username, password: password, confirmPassword: confirmPassword) { (success, message) in
-                   // Show an alert with the result of the save operation
-                   self.showAlert(message: message)
+                  
+                   self.shownaviagtionAlert(title: "SignUp", message: "SignUp Successfully", completion: {
+                       
+                       self.navigationController?.popViewController(animated: true)
+
+                       
+                   })
+                   
                }
         
     }
