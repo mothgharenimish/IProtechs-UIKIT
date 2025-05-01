@@ -5,7 +5,6 @@
 //  Created by Nimish Mothghare on 30/04/25.
 //
 
-// CoreDataManager.swift
 import Foundation
 import CoreData
 import UIKit

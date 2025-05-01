@@ -69,18 +69,15 @@ class NewOrderVC: UIViewController {
         ordertotalView.layer.borderColor = UIColor.lightGray.cgColor
 
 
-        // Initialize the date picker
                datePicker = UIDatePicker()
                datePicker?.datePickerMode = .date
                datePicker?.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
 
-               // Add a toolbar with "Done" button for the date picker
                let toolBar = UIToolbar()
                toolBar.sizeToFit()
                let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
                toolBar.setItems([doneButton], animated: true)
 
-               // Set the input view of the orderdatetxtField to the date picker
                orderdatetxtField.inputView = datePicker
                orderdatetxtField.inputAccessoryView = toolBar
         
@@ -105,7 +102,6 @@ class NewOrderVC: UIViewController {
     
     // MARK: - Date Picker Methods
         @objc func dateChanged() {
-            // Format and display the selected date
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .none
@@ -114,7 +110,6 @@ class NewOrderVC: UIViewController {
 
         // MARK: - Done Button Action
         @objc func doneButtonTapped() {
-            // Close the date picker when "Done" is tapped
             self.view.endEditing(true)
         }
     
@@ -145,7 +140,6 @@ class NewOrderVC: UIViewController {
                    }
                    
                    delegate?.didAddOrder(newOrder)
-                // Go back
                 self.navigationController?.popViewController(animated: true)
             } else {
                 shownaviagtionAlert(title: "New Order", message: "Please fill all the required fields")
