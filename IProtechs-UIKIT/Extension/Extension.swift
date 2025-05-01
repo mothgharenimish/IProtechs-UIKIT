@@ -38,16 +38,14 @@ extension UIImageView {
 
 extension UIViewController {
 
-    // Validate Username using Regex (No numbers)
        func isValidUsername(_ username: String) -> Bool {
-           let usernameRegex = "^[a-zA-Z]+$"  // Only alphabetic characters (no numbers)
+           let usernameRegex = "^[a-zA-Z]+$"
            let usernameTest = NSPredicate(format: "SELF MATCHES %@", usernameRegex)
            return usernameTest.evaluate(with: username)
        }
        
-       // Validate Password using Regex (10 characters, numeric or alphabetic or mixed)
        func isValidPassword(_ password: String) -> Bool {
-           let passwordRegex = "^[a-zA-Z0-9]{10}$"  // 10 characters, can be alphabetic, numeric, or both
+           let passwordRegex = "^[a-zA-Z0-9]{10}$"
            let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
            return passwordTest.evaluate(with: password)
        }
@@ -68,4 +66,40 @@ extension UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    
+    func Passwordshow(psdtextfiled : UITextField,eyeimg : UIImageView,iconclick : inout Bool) {
+        
+        if iconclick {
+            
+            psdtextfiled.isSecureTextEntry = false
+            eyeimg.image = UIImage(named: "icons8-eye-24 (1)")
+        }
+        
+        else {
+            
+            psdtextfiled.isSecureTextEntry = true
+            eyeimg.image = UIImage(named: "icons8-invisible-32 (2)")
+        }
+        
+        iconclick = !iconclick
+    }
+    
+    
+    func passwordRemember(boxImg : UIImageView,boxClick : inout Bool) {
+        
+        if boxClick {
+            
+            boxImg.image = UIImage(named: "icons8-checked-checkbox-50")
+        }
+        
+        else {
+            
+            boxImg.image = UIImage(named: "icons8-unchecked-checkbox-24")
+        }
+        
+        boxClick = !boxClick
+    }
+    
+    
 }

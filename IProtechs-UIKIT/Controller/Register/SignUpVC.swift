@@ -21,9 +21,13 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var fbView: UIView!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var signinBtn: UIButton!
+    @IBOutlet weak var passwordeyeimg: UIImageView!
+    @IBOutlet weak var confirmpasswordimg: UIImageView!
     
     let coreDataManager = CoreDataManager()
     
+    var iconClick = false
+
     
     //MARK: -View Life Cycle
     override func viewDidLoad() {
@@ -42,8 +46,40 @@ class SignUpVC: UIViewController {
         confirmpasswordView.layer.borderWidth = 1.0
         confirmpasswordView.layer.borderColor = UIColor.lightGray.cgColor
         
+        googleView.setCornerRadiusView(9.0)
+        googleView.layer.borderWidth = 1.0
+        googleView.layer.borderColor = UIColor.lightGray.cgColor
         
+        fbView.setCornerRadiusView(9.0)
+        fbView.layer.borderWidth = 1.0
+        fbView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(passwordimageTapped(tapGestureRecognizer:)))
+        passwordeyeimg.isUserInteractionEnabled = true
+        passwordeyeimg.addGestureRecognizer(tapGestureRecognizer)
+        
+        let tapGestureRecognizers = UITapGestureRecognizer(target: self, action: #selector(confirmpasswordimageTapped(tapGestureRecognizer:)))
+        confirmpasswordimg.isUserInteractionEnabled = true
+        confirmpasswordimg.addGestureRecognizer(tapGestureRecognizers)
     }
+    
+    
+    @objc func passwordimageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImages = tapGestureRecognizer.view as! UIImageView
+        
+        print("Tapped on the Eye Image")
+        
+        Passwordshow(psdtextfiled: passwordtxtField, eyeimg: tappedImages, iconclick: &iconClick)
+    }
+    
+    @objc func confirmpasswordimageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        
+        print("Tapped on the Eye Image")
+        
+        Passwordshow(psdtextfiled: confirmpasswordtxtField, eyeimg: tappedImage, iconclick: &iconClick)
+    }
+   
     
     //MARK: -Back IBAction
     @IBAction func backAction(_ sender: UIButton) {

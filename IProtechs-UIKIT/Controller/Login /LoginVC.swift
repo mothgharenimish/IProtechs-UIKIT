@@ -19,11 +19,14 @@ class LoginVC: UIViewController {
     @IBOutlet weak var fbView: UIView!
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
-    
+    @IBOutlet weak var eyeimg: UIImageView!
+    @IBOutlet weak var remembermeImg: UIImageView!
+    @IBOutlet weak var remembermeLbl: UILabel!
     
     let coreDataManager = CoreDataManager()
-
     
+    var iconClick = false
+
     //MARK: -View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +47,31 @@ class LoginVC: UIViewController {
         fbView.layer.borderWidth = 1.0
         fbView.layer.borderColor = UIColor.lightGray.cgColor
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        eyeimg.isUserInteractionEnabled = true
+        eyeimg.addGestureRecognizer(tapGestureRecognizer)
+        
+        let tapGestureRecognizerLbl = UITapGestureRecognizer(target: self, action: #selector(imageTappedLbl(tapGestureRecognizer:)))
+        remembermeLbl.isUserInteractionEnabled = true
+        remembermeLbl.addGestureRecognizer(tapGestureRecognizerLbl)
+    }
+    
+    
+    @objc func imageTappedLbl(tapGestureRecognizer: UITapGestureRecognizer) {
+        
+        passwordRemember(boxImg: remembermeImg, boxClick: &iconClick)
+
         
     }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        
+        print("Tapped on the Eye Image")
+        
+        Passwordshow(psdtextfiled: passwordtxtField, eyeimg: tappedImage, iconclick: &iconClick)
+    }
+    
     
     
     //MARK: -Sign Up IBAction

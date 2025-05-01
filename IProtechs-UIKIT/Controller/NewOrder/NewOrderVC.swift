@@ -28,6 +28,7 @@ class NewOrderVC: UIViewController {
     @IBOutlet weak var ordertotalView: UIView!
     @IBOutlet weak var ordertotaltxtField: UITextField!
     @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     
     
     weak var delegate: OrderDelegate?
@@ -97,6 +98,14 @@ class NewOrderVC: UIViewController {
                     title = "New Order"
                 }
       
+    }
+    
+    
+    
+    @IBAction func backAction(_ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
+
     }
     
     

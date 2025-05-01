@@ -456,10 +456,13 @@
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="qjS-8g-3Ih" id="ei1-Tl-weg"/>
+                        <outlet property="eyeimg" destination="Nse-UT-M4v" id="L2Z-5U-WiL"/>
                         <outlet property="fbView" destination="4vO-s8-gRb" id="Pjp-OL-Rfb"/>
                         <outlet property="googleView" destination="0SQ-3j-Shc" id="MF4-mb-hi1"/>
                         <outlet property="passwordView" destination="NJm-Jr-WpU" id="Td5-Go-SeT"/>
                         <outlet property="passwordtxtField" destination="QNX-Zi-XNI" id="myW-ls-xC4"/>
+                        <outlet property="remembermeImg" destination="cxA-23-8US" id="AWG-Iu-MG4"/>
+                        <outlet property="remembermeLbl" destination="IjZ-JS-ef2" id="yla-rd-SzV"/>
                         <outlet property="signUpBtn" destination="bLE-nn-G4J" id="TK5-fv-wgW"/>
                         <outlet property="signinBtn" destination="9BD-fr-xnJ" id="QTE-0V-0pL"/>
                         <outlet property="usernameView" destination="faq-S7-Gge" id="JB3-ju-HjK"/>
@@ -567,7 +570,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HRb-jl-m4A">
                                                         <rect key="frame" x="30" y="0.0" width="303" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-invisible-32 (2)" translatesAutoresizingMaskIntoConstraints="NO" id="4Mz-t1-Smo">
                                                         <rect key="frame" x="338" y="17.666666666666686" width="20" height="20"/>
@@ -757,7 +760,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fxp-h0-duJ">
                                                         <rect key="frame" x="30" y="0.0" width="303" height="55"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-invisible-32 (2)" translatesAutoresizingMaskIntoConstraints="NO" id="8wU-RV-4iQ">
                                                         <rect key="frame" x="338" y="17.666666666666686" width="20" height="20"/>
@@ -846,10 +849,12 @@
                     <connections>
                         <outlet property="backBtn" destination="yqq-MJ-uAa" id="mKv-AQ-Ztk"/>
                         <outlet property="confirmpasswordView" destination="ZRJ-Uo-5If" id="sER-ab-VGd"/>
+                        <outlet property="confirmpasswordimg" destination="8wU-RV-4iQ" id="I21-HU-QSH"/>
                         <outlet property="confirmpasswordtxtField" destination="Fxp-h0-duJ" id="dpY-on-ixm"/>
                         <outlet property="fbView" destination="5ma-L3-Hof" id="fsU-Ox-TO1"/>
                         <outlet property="googleView" destination="j3B-gW-ISl" id="D77-Tf-c35"/>
                         <outlet property="passwordView" destination="eiw-TI-PGe" id="ZnW-eU-mwc"/>
+                        <outlet property="passwordeyeimg" destination="4Mz-t1-Smo" id="qX0-Cw-N0s"/>
                         <outlet property="passwordtxtField" destination="HRb-jl-m4A" id="h3X-Sc-fKD"/>
                         <outlet property="signinBtn" destination="v29-RN-AmX" id="WIU-Gk-Zws"/>
                         <outlet property="signupBtn" destination="4BH-U3-kfL" id="K5l-de-BxP"/>
@@ -1194,6 +1199,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="backAction:" destination="g1B-hO-QEv" eventType="touchUpInside" id="MB7-cx-1ZI"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1233,6 +1241,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="YkC-WP-6Xz" id="uxq-Rj-Opf"/>
                         <outlet property="customeraddressView" destination="0Pn-Lw-i2Z" id="den-oW-jmF"/>
                         <outlet property="customeraddresstxtField" destination="5Yx-aR-GR8" id="q1V-Hu-Ii1"/>
                         <outlet property="customercontactView" destination="K7t-8R-iii" id="SLy-BU-HbP"/>
